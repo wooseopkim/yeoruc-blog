@@ -1,20 +1,19 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+import { getPosts } from '../../content';
+import { asHTML } from '@prismicio/helpers';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+	const posts = await getPosts();
 	return posts.map((post) => ({
-		params: { slug: post.slug },
+		params: { slug: post.data.title[0].text.replaceAll(' ', '-') },
 		props: post,
 	}));
 }
-type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
-const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
-	<Content />
+<BlogPost {...post}>
+	<div set:html={asHTML(post.data.body)} />
 </BlogPost>
