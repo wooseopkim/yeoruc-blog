@@ -1,4 +1,4 @@
-import { createClient } from '@prismicio/client';
+import { createClient, type RTNode, type RTTextNode } from '@prismicio/client';
 
 const repo = 'yeoruc';
 const client = createClient(repo);
@@ -11,20 +11,9 @@ export interface Post {
   slugs: string[];
   lang: string;
   data: {
-    title: [{
-      text: string;
-    }];
+    title: [RTTextNode];
     category: string;
-    body: {
-      type: string;
-      text: string;
-      spans: {
-        start: number;
-        end: number;
-        type: string;
-        data?: Record<string, any>;
-      }[];
-    }[];
+    body: [RTNode, ...RTNode[]];
   };
 }
 
