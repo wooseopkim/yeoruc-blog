@@ -20,6 +20,8 @@ jobs:
       - uses: volta-cli/action@v4
       - run: npm ci
       - run: npm run build
+        env:
+          BASE_PATH: ${{ vars.BASE_PATH }}
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v1
