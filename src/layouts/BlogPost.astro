@@ -1,19 +1,27 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import { type Post } from '../content';
-import { asHTML } from '@prismicio/helpers';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import { PrismicRichText, PrismicText } from "@prismicio/react";
 
-type Props = Post;
+type Props = CollectionEntry<"blog">["data"];
 
-const { data, first_publication_date, last_publication_date } = Astro.props;
+const {
+	title,
+	description,
+	data,
+	first_publication_date,
+	last_publication_date,
+} = Astro.props;
+
+console.log(data);
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={data.title[0].text} description={data.body.find((node) => 'text' in node)?.text?.slice(0, 20) ?? ''} />
+		<BaseHead title={title} description={description} />
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -62,19 +70,22 @@ const { data, first_publication_date, last_publication_date } = Astro.props;
 				<div class="prose">
 					<div class="title">
 						<div class="date">
-							<FormattedDate date={new Date(Date.parse(first_publication_date))} />
+							<FormattedDate date={first_publication_date} />
 							{
 								last_publication_date && (
 									<div class="last-updated-on">
-										Last updated on <FormattedDate date={new Date(Date.parse(last_publication_date))} />
+										Last updated on{" "}
+										<FormattedDate
+											date={last_publication_date}
+										/>
 									</div>
 								)
 							}
 						</div>
-						<div set:html={asHTML(data.title)} />
+						<h1>{title}</h1>
 						<hr />
 					</div>
-					<slot />
+					{(<PrismicRichText field={data.body} />)}
 				</div>
 			</article>
 		</main>

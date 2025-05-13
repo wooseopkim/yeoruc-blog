@@ -4,7 +4,7 @@ const repo = 'yeoruc';
 const client = createClient(repo);
 
 export interface Post {
-  uid: string;
+  id: string;
   tags: string[];
   first_publication_date: string;
   last_publication_date: string;
