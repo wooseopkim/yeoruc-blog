@@ -5,7 +5,6 @@ import type { RTTextNode } from '@prismicio/client';
 const blog = defineCollection({
 	loader: async () => {
 		const posts = await getPosts();
-		console.log(JSON.stringify(posts, null, 2));
 		return posts.map((x) => ({
 			...x,
 			title: x.data.title.reduce((acc, x) => `${acc} ${x.text}`, ''),
