@@ -5,5 +5,10 @@
     "type": "git",
     "url": "git+https://github.com/wooseopkim/yeoruc-blog.git"
   },
-  "workspaces": ["packages/*"]
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@strapi/strapi": "^5.15.0"
+  }
 }
