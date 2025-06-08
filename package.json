@@ -9,7 +9,7 @@
     "url": "git+https://github.com/wooseopkim/yeoruc-blog.git"
   },
   "scripts": {
-    "build": "npm run --workspace=packages/cms build"
+    "build": "npm run --workspace=packages/cms build && mv ./packages/cms/{.strapi,.strapi-updater.json,dist} ."
   },
   "version": "1.0.0",
   "workspaces": [
