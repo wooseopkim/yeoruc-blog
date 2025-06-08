@@ -1,0 +1,7 @@
+keys:
+  - &key age1cssahqlygnhw0g2xahryllqtf6y9s7m2lngra2tc0wwhp2ue9ewqyd7dan
+creation_rules:
+  - path_regex: ^dnscontrol/creds\.json$
+    age: *key
+  - path_regex: \.env$
+    age: *key

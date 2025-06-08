@@ -1,0 +1,7 @@
+{
+    "editor.codeActionsOnSave": {
+        "source": "always",
+        "source.json.sort": "never"
+    },
+    "editor.formatOnSave": true
+}
