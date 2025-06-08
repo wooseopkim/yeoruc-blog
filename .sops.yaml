@@ -4,4 +4,5 @@ creation_rules:
   - path_regex: ^dnscontrol/creds\.json$
     age: *key
   - path_regex: \.env$
+    unencrypted_regex: ^(HOST|PORT|DATABASE_.+)$
     age: *key
