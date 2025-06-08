@@ -1,14 +1,14 @@
 {
   "name": "yeoruc",
-  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wooseopkim/yeoruc-blog.git"
   },
+  "version": "1.0.0",
   "workspaces": [
     "packages/*"
   ],
-  "devDependencies": {
+  "dependencies": {
     "@strapi/plugin-cloud": "^5.15.0",
     "@strapi/strapi": "^5.15.0"
   }
