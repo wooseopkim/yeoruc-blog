@@ -1,15 +1,18 @@
 {
+  "dependencies": {
+    "@strapi/plugin-cloud": "^5.15.0",
+    "@strapi/strapi": "^5.15.0"
+  },
   "name": "yeoruc",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wooseopkim/yeoruc-blog.git"
   },
+  "scripts": {
+    "build": "npm run --workspace=packages/cms build"
+  },
   "version": "1.0.0",
   "workspaces": [
     "packages/*"
-  ],
-  "dependencies": {
-    "@strapi/plugin-cloud": "^5.15.0",
-    "@strapi/strapi": "^5.15.0"
-  }
+  ]
 }
