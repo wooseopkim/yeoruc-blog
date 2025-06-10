@@ -148,5 +148,3 @@ keys.txt
 dnscontrol/types-dnscontrol.d.ts
 
 .vercel
-
-.strapi*
