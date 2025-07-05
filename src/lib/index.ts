@@ -12,6 +12,5 @@ export async function loadPosts() {
             publishedAt: string;
         }[];
     } = await res.json();
-    console.log(data);
     return { body: data };
 }
