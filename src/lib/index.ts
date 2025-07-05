@@ -1,5 +1,5 @@
 export async function loadPosts() {
-    const res = await fetch('http://inspiring-dawn-abf8c51535.strapiapp.com/api/articles?populate=*');
+    const res = await fetch('https://fantastic-friend-926e1365b1.strapiapp.com/api/articles?populate=*');
     const data: {
         data: {
             id: number;
