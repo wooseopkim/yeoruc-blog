@@ -6,8 +6,8 @@
 
 <ul>
 	{#each data.articles.body.data as post}
-		<li>
-			<pre>{JSON.stringify(post, null, 2)}</pre>
-		</li>
+		<section>
+			<a href={`/blog/${post.documentId}`}>{post.title}</a>
+		</section>
 	{/each}
 </ul>
