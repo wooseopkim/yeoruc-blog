@@ -5,9 +5,9 @@
 </script>
 
 <ul>
-	{#each data.articles.body.data as post}
+	{#each data.articles.body.data as article}
 		<section>
-			<a href={`/blog/${post.documentId}`}>{post.title}</a>
+			<a href={`/blog/${article.documentId}`}>{article.title}</a>
 		</section>
 	{/each}
 </ul>

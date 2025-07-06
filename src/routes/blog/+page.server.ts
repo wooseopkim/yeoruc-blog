@@ -1,4 +1,4 @@
-import { loadPosts as loadArticles } from "$lib";
+import { loadArticles } from "$lib";
 
 import type { PageServerLoad } from "./$types";
 

@@ -2,7 +2,7 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-	let article = data.post.body.data;
+	let article = data.article.body.data;
 </script>
 
 <article>
