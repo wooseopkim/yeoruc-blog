@@ -33,6 +33,9 @@
 <style scoped>
 	article {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	article :global(img) {
@@ -80,6 +83,38 @@
 
 		& > time {
 			font-size: 0.65em;
+		}
+	}
+
+	main {
+		margin-block-start: 4rem;
+		margin-block-end: 16rem;
+		max-width: 50vmin;
+
+		& > :global(p) {
+			margin-block: 2.5rem;
+
+			& > :global(span[style*='background-color:']) {
+				padding-inline: 0.5rem;
+				padding-block: 0.25rem;
+			}
+		}
+
+		& > :global(blockquote) {
+			background-color: rgba(128, 96, 32, 0.3);
+			margin: 0;
+			padding-inline: 2rem;
+			padding-block: 1rem;
+			font-family: serif;
+
+			& > :global(p:first-child::before) {
+				content: '“';
+				margin-inline-end: 0.5em;
+			}
+			& > :global(p:last-child::after) {
+				content: '”';
+				margin-inline-start: 0.5em;
+			}
 		}
 	}
 </style>
