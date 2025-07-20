@@ -14,6 +14,7 @@
 				.join(', ')}
 			src={article.cover.url}
 			alt={article.cover.alternativeText}
+			style:height={`calc(${article.cover.height} / ${article.cover.width} * 100vw)`}
 		/>
 
 		<section>
@@ -46,6 +47,8 @@
 	header {
 		position: relative;
 		font-size: 1.5em;
+		width: 100%;
+		background-color: lightgrey;
 
 		& > img {
 			backdrop-filter: brightness(0.1) opacity(0.5);
