@@ -14,7 +14,6 @@
 				.join(', ')}
 			src={article.cover.url}
 			alt={article.cover.alternativeText}
-			style:height={`calc(${article.cover.height} / ${article.cover.width} * 100vw)`}
 		/>
 
 		<section>
@@ -53,6 +52,8 @@
 		& > img {
 			backdrop-filter: brightness(0.1) opacity(0.5);
 			background-color: rgba(0, 0, 0, 0.7);
+			width: 100vw;
+			height: 100vh;
 		}
 
 		& > img + section {
