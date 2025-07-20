@@ -54,6 +54,7 @@
 			background-color: rgba(0, 0, 0, 0.7);
 			width: 100vw;
 			height: 100vh;
+			object-fit: cover;
 		}
 
 		& > img + section {
